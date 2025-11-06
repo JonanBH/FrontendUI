@@ -17,9 +17,8 @@ void UFE_Widget_PrimaryLayout::RegisterWidgetStack(UPARAM(meta = (Categories = "
 {
 	if (IsDesignTime()) return;
 
-	if (!RegisteredWidgetStackMap.Contains(InStackTag)) return;
+	if (RegisteredWidgetStackMap.Contains(InStackTag)) return;
 	
 	RegisteredWidgetStackMap.Add(InStackTag, InStack);
 
-	Debug::Print(TEXT("Widget Stack Registered under the tag %s") + InStackTag.ToString());
 }
