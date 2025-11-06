@@ -2,4 +2,19 @@
 
 
 #include "Controllers/FEPlayerController.h"
+#include "Camera/CameraActor.h"
+#include "Kismet/GameplayStatics.h"
 
+void AFEPlayerController::OnPossess(APawn* InPawn)
+{
+	Super::OnPossess(InPawn);
+
+	TArray<AActor*> FoundCameras;
+	UGameplayStatics::GetAllActorsOfClassWithTag(this, ACameraActor::StaticClass(),
+		FName("Default"),FoundCameras );
+
+	if (!FoundCameras.IsEmpty())
+	{
+		SetViewTargetWithBlend(FoundCameras[0]);
+	}
+}

@@ -13,5 +13,8 @@ UCLASS()
 class FRONTENDUI_API AFEPlayerController : public APlayerController
 {
 	GENERATED_BODY()
-	
+
+	//~ Begin APlayerController Interface
+	virtual void OnPossess(APawn* InPawn) override;
+	//~ End APlayerController Interface
 };
