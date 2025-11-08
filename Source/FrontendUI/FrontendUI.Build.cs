@@ -10,13 +10,14 @@ public class FrontendUI : ModuleRules
 	
 		PublicDependencyModuleNames.AddRange(new string[]
 		{
+			"CommonUI",
 			"Core", 
 			"CoreUObject", 
+			"DeveloperSettings",
 			"Engine", 
-			"InputCore",
 			"EnhancedInput",
 			"GameplayTags",
-			"CommonUI",
+			"InputCore",
 			"UMG"
 		});
 
