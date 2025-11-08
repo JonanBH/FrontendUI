@@ -49,7 +49,7 @@ void UFE_UISubsystem::PushSoftWidgetToStackAsync(const FGameplayTag& InWidgetSta
 	TSoftClassPtr<UFE_Widget_ActivatableBase> InSoftWidgetClass,
 	TFunction<void(EAsyncPushWidgetState, UFE_Widget_ActivatableBase*)> AsyncPushStateCallback)
 {
-	check(InSoftWidgetClass.IsNull());
+	check(!InSoftWidgetClass.IsNull());
 
 	UAssetManager::Get().GetStreamableManager().RequestAsyncLoad(
 		InSoftWidgetClass.ToSoftObjectPath(),
