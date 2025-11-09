@@ -6,6 +6,8 @@
 #include "CommonActivatableWidget.h"
 #include "FE_Widget_ActivatableBase.generated.h"
 
+class AFEPlayerController;
+
 /**
  * 
  */
@@ -13,4 +15,11 @@ UCLASS(Abstract, BlueprintType, meta = (DisableNativeTick))
 class FRONTENDUI_API UFE_Widget_ActivatableBase : public UCommonActivatableWidget
 {
 	GENERATED_BODY()
+
+protected:
+	UFUNCTION(BlueprintPure)
+	AFEPlayerController* GetOwningFrontendController();
+	
+private:
+	TWeakObjectPtr<AFEPlayerController> CachedOwningFrontendPC;
 };
