@@ -7,6 +7,7 @@
 #include "UI/Widgets/FE_Widget_ActivatableBase.h"
 #include "FE_UISubsystem.generated.h"
 
+class UFE_CommonButtonBase;
 class UFE_Widget_ActivatableBase;
 class UFE_Widget_PrimaryLayout;
 struct FGameplayTag;
@@ -16,6 +17,9 @@ enum class EAsyncPushWidgetState : uint8
 	OnCreatedBeforePush,
 	AfterPush,
 };
+
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnButtonDescriptionTextUpdatedDelegate, UFE_CommonButtonBase*,
+	BroadcastingButton, FText, DescriptionText);
 
 /**
  * 
@@ -40,6 +44,9 @@ public:
 		TSoftClassPtr<UFE_Widget_ActivatableBase> InSoftWidgetClass,
 		TFunction<void(EAsyncPushWidgetState, UFE_Widget_ActivatableBase*)> AsyncPushStateCallback);
 
+	UPROPERTY(BlueprintAssignable)
+	FOnButtonDescriptionTextUpdatedDelegate OnButtonDescriptionTextUpdated;
+	
 private:
 	UPROPERTY(Transient)
 	TObjectPtr<UFE_Widget_PrimaryLayout> CreatedPrimaryLayout;
