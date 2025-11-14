@@ -11,6 +11,7 @@ public class FrontendUI : ModuleRules
 		PublicDependencyModuleNames.AddRange(new string[]
 		{
 			"CommonUI",
+			"CommonInput",
 			"Core", 
 			"CoreUObject", 
 			"DeveloperSettings",
