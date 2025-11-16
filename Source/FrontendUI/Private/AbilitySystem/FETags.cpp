@@ -14,5 +14,6 @@ namespace FETags
 	{
 		UE_DEFINE_GAMEPLAY_TAG(Frontend_Widget_PressAnyKeyScreen, "FETags.Widgets.PressAnyKeyScreen");
 		UE_DEFINE_GAMEPLAY_TAG(Frontend_Widget_MainMenuScreen, "FETags.Widgets.MainMenuScreen");
+		UE_DEFINE_GAMEPLAY_TAG(Frontend_Widget_ConfirmScreen, "FETags.Widgets.ConfirmScreen");
 	}
 }
